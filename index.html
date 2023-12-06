@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="title-Logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlipKart_Clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <style>
+       
+        *{
+          margin: 0;
+          background-color:#ffffff;
+        
+        }
+        .main{
+            width: 100%;
+            height:2000px ;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+        header{
+            height: 55px;
+            width: 100%;
+            border: 1px black solid;
+            display: flex;
+            position: fixed;
+            gap: 50px;
+            align-items: center;
+
+        }
+            header .search{
+                height: 40px;
+                width: 750px;
+                background-color:whitesmoke;
+                display: flex;
+                align-items: center;
+                
+            }                                                                                                                                                       
+            .search svg{
+                margin: 10px;
+            }
+            .primary-text{
+                font-family: inter_regular,fallback-inter_regular,Arial,sans-serif;
+            }
+        .cart{
+            display: flex;
+            align-items: center;
+            gap: 5px;                                   
+            border-radius: 5px;
+            padding: 0px 10px;
+        }
+        .login:hover .bi-chevron-down{
+            transform: rotate(180deg);
+            transition: tranform 0.2s ease-out;
+        }
+        .login{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .seller{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .search input[type="search"]{
+            width:450px;
+            height: 35px;
+            background-color: none;
+            border: none;
+        }
+        .search input{
+            outline: none   ;
+        }
+        .seller:hover{
+            background-color: gainsboro;
+            transition: background-color 0.2s ease-out;
+        }
+        .login:hover{
+            background-color: gainsboro;
+            transition: background-color 0.2s ease-out;
+        }
+        .cart:hover{
+            background-color: gainsboro;
+            transition: background-color 0.2s ease-out;
+        }
+        /* main-content starts */
+        .main-container{
+            height: 1400px;
+            width: 85%;
+            /* background-color: lightcyan; */
+        }
+        .main-container .main-menu{
+            height: 200px;
+            width: 100% -16px;
+            background-color: #ffffff;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0px 20px;
+            border-bottom: 1px solid #ffffff;
+        }
+        .main-menu-img p{
+            font-size: 18px;
+            font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            flex: 1;
+        }
+        .main-menu-img p{
+            font-size: 18px;
+            font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+            font-weight: 500;
+            /* background-color: #ffffff; */
+        }
+        .main-menu-img p{
+            font-size: 18px;
+            font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+            font-weight: 500;
+        }                           
+        .main-menu-img p{
+            font-size: 18px;
+            font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+            font-weight: 500;
+        }
+        .main-menu-img p{
+            font-size: 18px;
+            font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+            font-weight: 500;
+        }
+        .main-menu-img p{
+            font-size: 18px;
+            font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+            font-weight: 500;
+        }
+        .main-menu-img p{
+            font-size: 18px;
+            font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+            font-weight: 500;
+        }
+        .main-menu-img p{
+            font-size: 18px;
+            font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+            font-weight: 500;
+        }
+        .main-menu-img p{
+            font-size: 18px;
+            font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+            font-weight: 500;
+        }
+        .h2{
+            height: 50px;
+            width: 100%;
+        }
+        .electronics{
+            height: 400px;
+            width: 100%;
+            font-size: 20px;
+            background-color:white;
+            font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+            margin-top: 8px;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+        }
+        .electronics .ele-wrapper{
+                    height: 350px;
+                    width: 250px; 
+                    border: 1px black solid;
+                    font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+                    margin-top: 22px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: row;
+
+        }
+        .ele-wrapper-image{
+            width: 205px;
+            margin-bottom: 50px;
+            /* border: 1px solid; */
+            text-align: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .ele-wrapper-image:hover{
+            transform: scale(1.05);
+            transition: transform 0.1s ease-out;
+        }
+        .electronics .ele-wrapper-image{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .toys{
+            height: 400px;
+            width: 100%;
+            font-size: 20px;
+            background-color:white;
+            font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+            margin-top: 8px;
+            display: flex;
+           
+            justify-content: space-around;
+            flex-direction: row;
+        }
+        .toys .toy-wrapper{
+                    height: 350px;
+                    width: 250px; 
+                    border: 1px black solid;
+                    font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+                    margin-top: 22px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: row;
+
+        }
+        .toy-wrapper-image{
+            width: 205px;
+            margin-bottom: 50px;
+            /* border: 1px solid; */
+            text-align: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .toy-wrapper-image:hover{
+            transform: scale(1.05);
+            transition: transform 0.1s ease-out;
+        }
+        .toys .toy-wrapper-image{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .sports{
+            height: 400px;
+            width: 100%;
+            font-size: 20px;
+            background-color:white;
+            font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+            margin-top: 8px;
+            display: flex;
+           
+            justify-content: space-around;
+            flex-direction: row;
+        }
+        .sports .sport-wrapper{
+                    height: 350px;
+                    width: 250px; 
+                    border: 1px black solid;
+                    font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+                    margin-top: 22px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: row;
+
+        }
+        .sport-wrapper-image{
+            width: 205px;
+            margin-bottom: 50px;
+            /* border: 1px solid; */
+            text-align: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .sport-wrapper-image:hover{
+            transform: scale(1.05);
+            transition: transform 0.1s ease-out;
+        }
+        .sport .toy-wrapper-image{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .fn-content{
+            height: 400px;
+            width: 100%;
+            font-size: 20px;
+            background-color:white;
+            font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+            margin-top: 8px;
+            display: flex;
+           
+            justify-content: space-around;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .fn-content .bs-wrapper{
+                    height: 350px;
+                    width: 250px; 
+                    border: 1px black solid;
+                    font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
+                    margin-top: 22px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: row;
+        }
+        .bs-wrapper-image{
+            width: 205px;
+            margin-bottom: 50px;
+            /* border: 1px solid; */
+            text-align: center;
+            align-items: stretch;
+            display: flex;
+            flex-direction: column;
+           
+        }
+        .bs-wrapper-image:hover{
+            transform: scale(1.05);
+            transition: transform 0.1s ease-out;
+        }
+        .fn-content .bs-wrapper-image{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+      .footer{
+        background-color:#24262b;
+        padding: 70px 0;
+
+      }
+      .row{
+        display: flex;
+        flex-wrap:wrap ;
+        background-color: #24262b;
+      }
+      .container{
+        width: 1170px;
+        background-color: #24262b;
+        margin: auto;
+      }
+      ul{
+        list-style: none;
+        background-color: #24262b;
+      }
+      .footer-col{
+        width: 25%;
+        padding: 0 1px;
+        text-align: center;
+        /* text-align: justify; */
+        background-color: #24262b;
+      }
+      .footer-col  li{
+        background-color: #24262b;
+        text-align: justify;
+        margin-left: -30px;
+        
+
+      }
+      .footer-col{
+        background-color: #24262b;
+
+      }
+      .footer-col a{
+        background-color: #24262b;
+        text-align: justify;
+      }
+      .footer-col h4{
+        font-size: 18px;
+        color: white;
+        text-transform: capitalize;
+        margin-bottom: 30px;
+        font-weight: 500;
+        position: relative;
+        line-height: 1;
+        /* display: flex;
+        align-items: center;
+        justify-content: center; */
+        text-align: justify;
+        background-color: #24262b;
+       
+      }
+     
+      .footer-col h4::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        /* background-color: #e91e63; */
+      }
+      .flip {
+        height: 50px;
+        width: 100%;
+        background-color:black;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        flex-direction: column;
+        position: relative;
+      }
+      .fnlogo .sell {
+        background-color: #24262b;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 50x;
+        padding: 0px 10px;
+        position: relative;
+      }
+      .fnlogo p{
+        background-color: #24262b;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 50px; 
+        position: relative; 
+          
+      }
+        .fnlogo .advertise{
+        background-color: #24262b;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 5px;
+        
+      }
+      .fnlogo .gift{
+        background-color: #24262b;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 5px;
+        
+      }
+      .fnlogo .help{
+        background-color: #24262b;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 5px;
+       
+      }
+      .fnlogo .copy{
+        background-color: #24262b;
+        /* display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 50px; */
+        
+      }
+      .fnlogo .visa{
+        background-color: #24262b;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 5px;
+        
+      }
+      .sell{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    .sell img{
+        color: #24262b;
+        background-color: #24262b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        flex-direction: row;
+        color: #ffffff;
+      }
+       .sell p{
+        color: #24262b;
+        background-color: #24262b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-direction: row;
+        color: #ffffff;
+
+      }
+       .visa img{
+        color: #24262b;
+        background-color: #24262b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        flex-direction: row;
+        color: #ffffff;
+
+      }
+      
+      
+
+
+
+       
+        
+        
+           
+        
+       
+   </style>
+</head>
+<body>
+    <!-- Nav Bar Starts -->
+
+    <div class="main">
+        <header>
+            <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus-44005d.svg" alt=""> 
+           <!-- Search div -->
+            <div class="search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+            <input type="search" id="" placeholder="Search for products,Brands and More">
+            </div> 
+            <!-- Login div -->
+            <div class="login">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                    </svg>
+                <p class="primary-text">Login</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                  </svg>
+            </div>  
+            <div class="cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                  </svg>
+                  <p class="primary-text">Cart</p>
+            </div>
+            <div class="seller">
+                <img src="https://static-assets-web.flixcart.com/b0atman-returns/batman-returns/p/images/Store-9eeae2.svg" alt="">
+                <p class="primary-text">Become a Seller</p>
+            </div>
+            <div><img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_3verticalDots-ea7819.svg" alt=""></div>
+            </header>
+        
+            <!-- Nav Bar Ends -->
+            <!-- Name content starts -->
+            <div class="main-container">
+                <div class="main-menu">
+                <div class="main-menu-img">
+                <img src="https://rukminim1.flixcart.com/flap/80/80/image/29327f40e9c4d26b.png?q=100" alt="">
+                <p>Grocery</p>
+                </div>
+                <div class="main-menu-img">
+                <img src="https://rukminim1.flixcart.com/flap/80/80/image/22fddf3c7da4c4f4.png?q=100" alt="">
+                <p>Mobiles</p>
+                </div>
+                <div class="main-menu-img">
+                <img src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/0d75b34f7d8fbcb3.png?q=100" alt="">
+                <p>Fashion</p>
+                </div>
+                <div class="main-menu-img">
+                <img src="https://rukminim1.flixcart.com/flap/80/80/image/69c6589653afdb9a.png?q=100" alt="">
+                <p>Electronics</p>
+                </div>
+                <div class="main-menu-img">
+                <img src="https://rukminim1.flixcart.com/flap/80/80/image/ab7e2b022a4587dd.jpg?q=100" alt="">
+                <p>Home&Furnitures</p>
+                </div>
+                <div class="main-menu-img">
+                <img src="https://rukminim1.flixcart.com/flap/80/80/image/0ff199d1bd27eb98.png?q=100" alt="">
+                <p>Appliances</p>
+                </div>
+                <div class="main-menu-img">
+                <img src="https://rukminim1.flixcart.com/flap/80/80/image/71050627a56b4693.png?q=100" alt="">
+                <p>Travel</p>
+                </div>
+                <div class="main-menu-img">
+                <img src="https://rukminim1.flixcart.com/flap/80/80/image/dff3f7adcf3a90c6.png?q=100" alt="">
+                <p>Beauty,Toys&more</p>
+                </div>
+                <div class="main-menu-img">
+                <img src="https://rukminim1.flixcart.com/fk-p-flap/80/80/image/05d708653beff580.png?q=100" alt="">
+                <p>Two Wheelers</p>
+                </div>
+                
+            </div>
+            <!-- Image moving carosel  starts-->
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="carosel-img1.webp" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="carosel-img2.webp" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="carosel-img3.webp" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              <!-- Image moving  stops-->
+               <!--  Best of electronics starts -->
+               <div><h2>Best of Electronics</h2></div>
+                
+               <div class="electronics"> 
+                <div class="ele-wrapper">
+                <div class="ele-wrapper-image">
+                <img src="keyboard.webp" alt="" height="200px", width="200px">
+                <p align="center">Dell keyboard</p>
+                <span><b>From&#8377;1000</b></span>
+                </div>
+                </div>
+
+                <div class="ele-wrapper">
+                    <div class="ele-wrapper-image">
+                    <img src="camera.webp" alt="" height="150px", width="150px">
+                    <p align="center">Top Mirrorless Cameras</p>
+                    <span><b>From&#8377;999</b></span>
+                    </div>
+                    </div>
+
+                    <div class="ele-wrapper">
+                        <div class="ele-wrapper-image">
+                        <img src="printer.webp" alt="" height="200px", width="200px">
+                        <p align="center">printer</p>
+                        <span><b>From&#8377;5000</b></span>
+                        </div>
+                        </div>
+
+                    <div class="ele-wrapper">
+                        <div class="ele-wrapper-image">
+                        <img src="monitor.webp" alt="" height="200px", width="200px">
+                        <p align="center">monitor</p>
+                        <span><b>From&#8377;50000</b></span>
+                        </div>
+                        </div>
+                    </div>
+               <!--  Best of electronics stops -->
+           
+            <!-- toys starts -->
+            <div><h2>Beauty,Toys,Foods& More</h2></div>
+            <div class="toys"> 
+                <div class="toy-wrapper">
+                <div class="toy-wrapper-image">
+                <img src="teddy.webp" alt="" height="200px", width="200px">
+                <p align="center">Teddy</p>
+                <span><b>Upto 70% off</b></span>
+                </div>
+                </div>
+
+                <div class="toy-wrapper">
+                    <div class="toy-wrapper-image">
+                    <img src="helmet.webp" alt="" height="200px", width="200px">
+                    <p align="center">Helmets</p>
+                    <span><b>From 699</b></span>
+                    </div>
+                    </div>
+
+                    <div class="toy-wrapper">
+                        <div class="toy-wrapper-image">
+                        <img src="cycle.webp" alt="" height="200px", width="200px">
+                        <p align="center">Non-Geared Cycles</p>
+                        <span><b>Upto 40% off</b></span>
+                        </div>
+                        </div>
+
+                    <div class="toy-wrapper">
+                    <div class="toy-wrapper-image">
+                    <img src="microphones.webp" alt="" height="200px", width="200px">
+                    <p align="center">Microphones</p>
+                    <span><b>Upto 70% off</b></span>
+                    </div>
+                    </div>
+            </div>
+         <!-- toys stops -->
+
+         <!-- Sports starts -->
+         <div><h2>Sports,Healthcare& More</h2></div>
+
+         <div class="sports"> 
+            <div class="sport-wrapper">
+            <div class="sport-wrapper-image">
+            <img src="carlubricant.webp" alt="" height="200px", width="200px">
+            <p align="center">Car Lubricant</p>
+            <span><b>Upto 75% off</b></span>
+            </div>
+            </div>
+
+            <div class="sport-wrapper">
+                <div class="sport-wrapper-image">
+                <img src="fictionbooks.webp" alt="" height="200px", width="200px">
+                <p align="center">Fiction Books</p>
+                <span><b>Upto 70% off</b></span>
+                </div>
+                </div>
+
+                <div class="sport-wrapper">
+                    <div class="sport-wrapper-image">
+                    <img src="cactus.webp" alt="" height="200px", width="200px">
+                    <p align="center">Cactus</p>
+                    <span><b>From&#8377;400</b></span>
+                    </div>
+                    </div>
+                    <div class="sport-wrapper">
+                        <div class="sport-wrapper-image">
+                        <img src="yogamat.webp" alt="" height="200px", width="200px">
+                        <p align="center">Yoga mat</p>
+                        <span><b>From&#8377;399</b></span>
+                        </div>
+                        </div>
+        </div>
+         <!-- Sports stops -->
+        <!-- <div class="fn-content">
+            <div class="best-sellers">
+                <div class="bs1">
+                    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/smartwatch/k/h/s/1-83-38083pp01-android-ios-fastrack-yes-original-imagnhzeabmcfspe.jpeg?q=70" alt="">
+                </div>
+                
+            </div> -->
+            <div><h2>End of Seasons Best Sellers</h2></div>
+            <div class="fn-content">   
+                <div class="bs-wrapper">
+                    <div class="bs-wrapper-image">
+                        <img src="https://m.media-amazon.com/images/I/712+lS1mk-L._AC_UF1000,1000_QL80_.jpg" alt="" height="200px", width="200px">
+                        <p align="center">Smart Watch</p>
+                        <span><b>From 699</b></span>
+                    </div>
+               
+                </div>
+                <div class="bs-wrapper">
+                    <div class="bs-wrapper-image">
+                        <img src="https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1700150459_8923890.jpg?w=480&dpr=1.0" alt="" height="200px", width="200px">
+                        <p align="center">Men's Casual Shoes</p>
+                        <span><b>Min 70% off</b></span>
+                    </div>
+               
+                </div>
+                <div class="bs-wrapper">
+                    <div class="bs-wrapper-image">
+                        <img src="https://m.media-amazon.com/images/I/81Xrr1uLeJL._AC_UY350_.jpg" alt="" height="200px", width="200px">
+                        <p align="center">Wallets</p>
+                        <span><b>Min 70% off</b></span>
+                    </div>
+               
+                </div>
+                <div class="bs-wrapper">
+                    <div class="bs-wrapper-image">
+                        <img src="https://www.realmenrealstyle.com/wp-content/uploads/2023/10/Casual-watches-bracelet.gif" alt="" height="200px", width="200px">
+                        <p align="center">Wrist Watches</p>
+                        <span><b>Min 70% off</b></span>
+                    </div>
+               
+                </div>
+            </div>
+            <!--footer starts-->
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="footer-col">
+                            <h4>ABOUT</h4>
+                            <ul>
+                            <li><a href="About Us">About Us</a></li>
+                            <li><a href="Contact Us">Contact Us</a></li>
+                            <li><a href="Careers">Careers</a></li>
+                            <li><a href="Flipkart Stories">Flipkart Stories</a></li>
+                            <li><a href="Press">Press</a></li>
+                            <li><a href="Flipkart Wholesale">Flipkart Wholesale</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>HELP</h4>
+                            <ul>
+                                <li><a href="Payments">Payments</a></li>
+                            <li><a href="Shipping">Shipping</a></li>
+                            <li><a href="Cancellation&Returns">CAncellation&Returns</a></li>
+                            <li><a href="FAQ">FAQ</a></li>
+                            <li><a href="Report Infringement">Shipping</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>CONSUMER POLICY</h4>
+                            <ul>
+                                <li><a href="Cancellation&Returns">Cancellation&Returns</a></li>
+                                <li><a href="Terms of Use">Terms Of Use</a></li>
+                                <li><a href="Security">Security</a></li>
+                                <li><a href="Privacy">Privacy</a></li>
+                                <li><a href="Sitemap">Sitemap</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-col">
+                            <h4>SOCIAL</h4>
+                            <ul>
+                                <li><a href="Facebook">Facebook</a></li>
+                                <li><a href="Twitter">Twitter</a></li>
+                                <li><a href="Youtube">Youtube</a></li>
+                            </ul>
+                        </div>
+                        <!-- <hr color="white"> -->
+                    </div>
+                <hr>
+              </div>
+            </footer>
+           
+           
+           
+            <!-- <footer class="flip"> -->
+               <div class="fnlogo">
+                <div class="sell">
+                    <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/sell-image-9de8ef.svg" alt="">
+                    <p class="primary-text">Become a Seller</p>
+                    <div class="advertise">
+                        <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/advertise-image-866c0b.svg" alt="">
+                        <p class="primary-text">Advertise</p>
+                </div>
+                <div class="gift">
+                    <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/gift-cards-image-d7ff24.svg" alt="">
+                    <p class="primary-text">Gift cards</p>
+            </div>
+            <div class="help">
+                <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/help-centre-image-c4ace8.svg" alt="">
+                <p class="primary-text">Help Center</p>
+        </div>
+        <div class="copy">
+            <p class="primary-text">&copy;2007-2023 Flipkart.com</p>
+    </div>
+    <div class="visa">
+        <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-c454fb.svg" alt="">
+       
+</div>
+            </div>
+        </footer>
+          
+        </div>
+
+        </div>
+           
+
+            </div>
+            <!-- Name content ends -->
+        </body>
+        </html>
+    </div>
